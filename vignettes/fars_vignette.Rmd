@@ -28,7 +28,7 @@ In the package there are 3 exemplificative files of how the data looks like and 
 After you installed the fars package from the GitHub repository with the following command:
 
 ```{r, eval=FALSE}
-install_github("nome da inserire", build_vignettes = TRUE)
+install_github("veronicavedovetto/fars", build_vignettes = TRUE)
 ```
 
 you can source it as every other package with:

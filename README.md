@@ -15,7 +15,7 @@ Installation
 You can install the released version of fars from [GitHub](https://github.com/) with:
 
 ``` r
-install_github("nome da inserire", build_vignettes = TRUE)
+install_github("veronicavedovetto/fars", build_vignettes = TRUE)
 ```
 
 How to use fars
