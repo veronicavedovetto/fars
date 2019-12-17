@@ -5,14 +5,21 @@ Authors@R:
     person(given = "Veronica",
            family = "Vedovetto",
            role = c("aut", "cre"),
-           email = "veronica_vedovetto@yahoo.it",
-           comment = c(ORCID = "YOUR-ORCID-ID"))
+           email = "veronica_vedovetto@yahoo.it")
 Description: What the package does (one paragraph).
-License: What license it uses
+License: GPL (>= 2)
 Encoding: UTF-8
 LazyData: true
+Depends: R (>= 3.1.0), dplyr, magrittr, maps, readr, tidyr
 Suggests: 
     knitr,
-    rmarkdown
+    rmarkdown,
+    testthat
 VignetteBuilder: knitr
 RoxygenNote: 6.1.1
+Collate: 
+    'fars_read.r'
+    'make_filename.r'
+    'fars_map_state.r'
+    'fars_read_years.r'
+    'fars_summarize_years.r'

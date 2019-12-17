@@ -25,6 +25,29 @@ This is a basic example which shows you how to import one of the file with colle
 
 ``` r
 library(fars)
+#> Loading required package: dplyr
+#> Warning: package 'dplyr' was built under R version 3.5.3
+#> 
+#> Attaching package: 'dplyr'
+#> The following objects are masked from 'package:stats':
+#> 
+#>     filter, lag
+#> The following objects are masked from 'package:base':
+#> 
+#>     intersect, setdiff, setequal, union
+#> Loading required package: magrittr
+#> Warning: package 'magrittr' was built under R version 3.5.3
+#> Loading required package: maps
+#> Warning: package 'maps' was built under R version 3.5.3
+#> Loading required package: readr
+#> Warning: package 'readr' was built under R version 3.5.3
+#> Loading required package: tidyr
+#> Warning: package 'tidyr' was built under R version 3.5.3
+#> 
+#> Attaching package: 'tidyr'
+#> The following object is masked from 'package:magrittr':
+#> 
+#>     extract
 
 fars_summarize_years(2013:2014, demo = TRUE)
 #> # A tibble: 12 x 3

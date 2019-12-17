@@ -8,6 +8,9 @@ fars_summarize_years(years, demo = FALSE)
 }
 \arguments{
 \item{years}{a character or numeric value, a vector or a list of years}
+
+\item{demo}{logical if you want to use the function with demo data that comes with the package.
+Default to FALSE}
 }
 \value{
 a tibble showing the number of observations by month for the imported files.
@@ -21,4 +24,5 @@ Files should be in working directory.
 \dontrun{acc_summ <- fars_summarize_years(2013:2015)
 acc_2015 <- fars_summarize_years("2015")}
 
+#'@include make_filename.r fars_read.r fars_read_years.r
 }

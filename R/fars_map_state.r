@@ -25,6 +25,8 @@
 #'  \dontrun{fars_map_state("1","2013")
 #' fars_map_state("3","2014") #this shows the error}
 #'
+#'@include make_filename.r fars_read.r
+#'
 #' @export
 fars_map_state <- function(state.num, year, demo = FALSE) {
   filename <- make_filename(year, demo = demo)
