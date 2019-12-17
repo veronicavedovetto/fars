@@ -5,27 +5,29 @@
 #' and where the accidents have happened.
 #' Files should be in working directory.
 #'
-#'  @param state.num a number/character string for the State you are looking for
-#'  @param year a number/character string for the year
+#' @param state.num a number/character string for the State you are looking for
+#' @param year a number/character string for the year
+#' @param demo logical if you want to use the function with demo data that comes with the package.
+#'  Default to FALSE
 #'
-#'  @return This function plots a map with points where accidents happened.
+#' @return This function plots a map with points where accidents happened.
 #'  Nothing is returned in the environment
 #'
-#'  @section Warning:
+#' @section Warning:
 #'  The function checks for valid \code{state.num} otherwise it throws an error.
 #'  The function doesn't accept more than one state number or year.
 #'
-#'  @importFrom dplyr filter
-#'  @importFrom maps map
-#'  @importFrom graphics points
+#' @importFrom dplyr filter
+#' @importFrom maps map
+#' @importFrom graphics points
 #'
-#'  @examples
+#' @examples
 #'  \dontrun{fars_map_state("1","2013")
 #' fars_map_state("3","2014") #this shows the error}
 #'
 #' @export
-fars_map_state <- function(state.num, year) {
-  filename <- make_filename(year)
+fars_map_state <- function(state.num, year, demo = FALSE) {
+  filename <- make_filename(year, demo = demo)
   data <- fars_read(filename)
   state.num <- as.integer(state.num)
 

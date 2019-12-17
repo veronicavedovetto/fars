@@ -17,8 +17,8 @@
 #' acc_2015 <- fars_summarize_years("2015")}
 #'
 #' @export
-fars_summarize_years <- function(years) {
-  dat_list <- fars_read_years(years)
+fars_summarize_years <- function(years, demo = FALSE) {
+  dat_list <- fars_read_years(years, demo = demo)
   dplyr::bind_rows(dat_list) %>%
     dplyr::group_by(year, MONTH) %>%
     dplyr::summarize(n = n()) %>%
