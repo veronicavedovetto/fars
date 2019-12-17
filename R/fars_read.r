@@ -1,3 +1,4 @@
+utils::globalVariables(c("year", "STATE", "MONTH"))
 #' Read external csv file
 #'
 #' This function check the existence of the csv file and if it exists read it into a tibble.
