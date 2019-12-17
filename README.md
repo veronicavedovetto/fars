@@ -5,44 +5,53 @@ fars
 
 <!-- badges: start -->
 <!-- badges: end -->
-The goal of fars is to ...
+The goal of fars is to provide some functions to analyse data from the [US National Highway Traffic Safety Administration's Fatality Analysis Reporting System](https://www.nhtsa.gov/research-data), which is a nationwide census providing the American public yearly data regarding fatal injuries suffered in motor vehicle traffic crashes.
+
+In the package there are 3 exemplificative files of how the data looks like and that can be used to have a better idea of how the functions work.
 
 Installation
 ------------
 
-You can install the released version of fars from [CRAN](https://CRAN.R-project.org) with:
+You can install the released version of fars from [GitHub](https://github.com/) with:
 
 ``` r
-install.packages("fars")
+install_github("nome da inserire", build_vignettes = TRUE)
 ```
 
-Example
--------
+How to use fars
+---------------
 
-This is a basic example which shows you how to solve a common problem:
+This is a basic example which shows you how to import one of the file with collected data and obtain a summary for the number of monthly accidents happened in two years:
 
 ``` r
-#library(fars)
-## basic example code
+library(fars)
+
+fars_summarize_years(2013:2014, demo = TRUE)
+#> # A tibble: 12 x 3
+#>    MONTH `2013` `2014`
+#>    <dbl>  <int>  <int>
+#>  1     1   2230   2168
+#>  2     2   1952   1893
+#>  3     3   2356   2245
+#>  4     4   2300   2308
+#>  5     5   2532   2596
+#>  6     6   2692   2583
+#>  7     7   2660   2696
+#>  8     8   2899   2800
+#>  9     9   2741   2618
+#> 10    10   2768   2831
+#> 11    11   2615   2714
+#> 12    12   2457   2604
 ```
 
-What is special about using `README.Rmd` instead of just `README.md`? You can include R chunks like so:
+`demo = TRUE` will tell the function to use the data provided with the package as an example. If you want to use new downloaded data set it to FALSE (default value) and put the zipped files in the working directory.
+
+You can also plot where accidents have happened with the following function:
 
 ``` r
-summary(cars)
-#>      speed           dist       
-#>  Min.   : 4.0   Min.   :  2.00  
-#>  1st Qu.:12.0   1st Qu.: 26.00  
-#>  Median :15.0   Median : 36.00  
-#>  Mean   :15.4   Mean   : 42.98  
-#>  3rd Qu.:19.0   3rd Qu.: 56.00  
-#>  Max.   :25.0   Max.   :120.00
+fars_map_state(1, 2013, demo = TRUE)
 ```
 
-You'll still need to render `README.Rmd` regularly, to keep `README.md` up-to-date.
+<img src="man/figures/README-map_state-1.png" width="100%" />
 
-You can also embed plots, for example:
-
-<img src="man/figures/README-pressure-1.png" width="100%" />
-
-In that case, don't forget to commit and push the resulting figure files, so they display on GitHub!
+You should indicate the number of the state and the year to be visualized.

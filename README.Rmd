@@ -18,37 +18,37 @@ knitr::opts_chunk$set(
 <!-- badges: start -->
 <!-- badges: end -->
 
-The goal of fars is to ...
+The goal of fars is to provide some functions to analyse data from the [US National Highway Traffic Safety Administration's Fatality Analysis Reporting System](https://www.nhtsa.gov/research-data), which is a nationwide census providing the American public yearly data regarding fatal injuries suffered in motor vehicle traffic crashes.
+
+In the package there are 3 exemplificative files of how the data looks like and that can be used to have a better idea of how the functions work.
+
 
 ## Installation
 
-You can install the released version of fars from [CRAN](https://CRAN.R-project.org) with:
+You can install the released version of fars from [GitHub](https://github.com/) with:
 
 ``` r
-install.packages("fars")
+install_github("nome da inserire", build_vignettes = TRUE)
 ```
 
-## Example
+## How to use fars
 
-This is a basic example which shows you how to solve a common problem:
+This is a basic example which shows you how to import one of the file with collected data and obtain a summary for the number of monthly accidents happened in two years:
 
 ```{r example}
-#library(fars)
-## basic example code
+library(fars)
+
+fars_summarize_years(2013:2014, demo = TRUE)
 ```
 
-What is special about using `README.Rmd` instead of just `README.md`? You can include R chunks like so:
+`demo = TRUE` will tell the function to use the data provided with the package as an example.
+If you want to use new downloaded data set it to FALSE (default value) and put the zipped files in the working directory.
 
-```{r cars}
-summary(cars)
+
+You can also plot where accidents have happened with the following function:
+
+```{r map_state, echo = TRUE}
+fars_map_state(1, 2013, demo = TRUE)
 ```
 
-You'll still need to render `README.Rmd` regularly, to keep `README.md` up-to-date.
-
-You can also embed plots, for example:
-
-```{r pressure, echo = FALSE}
-plot(pressure)
-```
-
-In that case, don't forget to commit and push the resulting figure files, so they display on GitHub!
+You should indicate the number of the state and the year to be visualized.
