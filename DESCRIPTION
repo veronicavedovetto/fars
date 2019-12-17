@@ -1,11 +1,11 @@
 Package: fars
-Title: What the Package Does (One Line, Title Case)
+Title: Useful Function for US Fatality Analysis Reporting System
 Version: 0.0.0.9000
 Authors@R: 
-    person(given = "First",
-           family = "Last",
+    person(given = "Veronica",
+           family = "Vedovetto",
            role = c("aut", "cre"),
-           email = "first.last@example.com",
+           email = "veronica_vedovetto@yahoo.it",
            comment = c(ORCID = "YOUR-ORCID-ID"))
 Description: What the package does (one paragraph).
 License: What license it uses
@@ -15,3 +15,4 @@ Suggests:
     knitr,
     rmarkdown
 VignetteBuilder: knitr
+RoxygenNote: 6.1.1
