@@ -17,7 +17,7 @@ knitr::opts_chunk$set(
 
 
 <!-- badges: start -->
-[![Travis build status](https://travis-ci.org/veronicavedovetto/building_R_packages_final_assignment.svg?branch=master)](https://travis-ci.org/veronicavedovetto/building_R_packages_final_assignment)
+[![Travis build status](https://travis-ci.com/veronicavedovetto/fars.svg?branch=master)](https://travis-ci.com/veronicavedovetto/fars)
 <!-- badges: end -->
 
 The goal of fars is to provide some functions to analyse data from the [US National Highway Traffic Safety Administration's Fatality Analysis Reporting System](https://www.nhtsa.gov/research-data), which is a nationwide census providing the American public yearly data regarding fatal injuries suffered in motor vehicle traffic crashes.
