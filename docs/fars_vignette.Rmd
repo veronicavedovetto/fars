@@ -1,0 +1,96 @@
+---
+title: "How to use fars package"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{How to use fars package}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+
+```{r setup}
+library(fars)
+```
+
+#The fars package
+
+This package provides some functions to analyse data from the [US National Highway Traffic Safety Administration's Fatality Analysis Reporting System](https://www.nhtsa.gov/research-data), which is a nationwide census providing the American public yearly data regarding fatal injuries suffered in motor vehicle traffic crashes.
+
+In the package there are 3 exemplificative files of how the data looks like and that can be used to have a better idea of how the functions work.
+
+After you installed the fars package from the GitHub repository with the following command:
+
+```{r, eval=FALSE}
+install_github("veronicavedovetto/fars", build_vignettes = TRUE)
+```
+
+you can source it as every other package with:
+
+```{r, eval=FALSE}
+library(fars)
+```
+
+Now you can start using the available functions.
+
+The functions of the package are:
+
+* make_filename
+* fars_read
+* fars_read_years
+* fars_summarize_years
+* fars_map_state
+
+These functions have been modified to allow the user play with the data that comes with the package (`demo = TRUE`). For real use you need to have zipped csv files in the working directory.
+
+The first function creates the name of (or the path to) the zipped csv file.
+Its a vectorized function so it works also for a vector of years.
+Usually the user don't need to run this function directly, because it is embedded in the main functions of the package, but can turn useful if you need to perform other actions to the data.
+
+```{r}
+
+file2013 <- make_filename(2013, demo = TRUE)
+file2013
+
+```
+
+The`fars_read ` function reads the zipped csv file and imports it in a tibble. So you can explore it easily and apply all the functions available in R for this purpose.
+
+```{r}
+
+df2013 <- fars_read(file2013)
+head(df2013)
+```
+
+This function reads multiple files at one time but returns only some of the variables present in the data.
+
+```{r}
+
+list2013_2014 <- fars_read_years(2013:2014, demo = TRUE)
+
+head(list2013_2014[[1]])
+```
+
+`fars_read_years` is embedded in the following function that produces a monthly summary of the number of accidents happened in the years selected. 
+
+```{r}
+
+fars_summarize_years(2013:2014, demo = TRUE)
+
+```
+
+Finally the `fars_map_state` function returns a plot of the places where accidents happened for a certain State in a certain year. This function doesn't allow more than one state and year at time.
+
+
+```{r}
+
+fars_map_state(1, 2013, demo = TRUE)
+
+```
+
