@@ -3,3 +3,4 @@
 ^istruzioni_pkg\.r$
 ^README\.Rmd$
 ^test$
+^\.travis\.yml$

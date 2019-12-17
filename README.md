@@ -4,7 +4,8 @@ fars
 ====
 
 <!-- badges: start -->
-<!-- badges: end -->
+[![Travis build status](https://travis-ci.org/veronicavedovetto/building_R_packages_final_assignment.svg?branch=master)](https://travis-ci.org/veronicavedovetto/building_R_packages_final_assignment) <!-- badges: end -->
+
 The goal of fars is to provide some functions to analyse data from the [US National Highway Traffic Safety Administration's Fatality Analysis Reporting System](https://www.nhtsa.gov/research-data), which is a nationwide census providing the American public yearly data regarding fatal injuries suffered in motor vehicle traffic crashes.
 
 In the package there are 3 exemplificative files of how the data looks like and that can be used to have a better idea of how the functions work.
